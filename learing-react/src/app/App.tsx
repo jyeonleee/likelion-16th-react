@@ -1,6 +1,8 @@
 import styles from "./App.module.css";
+// console.log(styles); // CSS Modules 기술을 사용해 내보내진 JS 객체
 
-console.log(styles); // CSS Modules 기술을 사용해 내보내진 JS 객체
+import Button from "../components/button/Button";
+console.log(Button); // React 함수형 컴포넌트(Functional Component)
 
 /**
  * JSX (JavaScript eXtension: 자바스크립트 확장 (비표준: 브라우저 해석 못함: SyntaxError))
@@ -31,6 +33,7 @@ export default function App() {
       <main className={styles.main}>
         <section>
           <h2>모든 태그는 반드시 닫혀야 합니다.</h2>
+          <Button />
           <p>
             <dfn>
               <abbr title="Hyper Text Markup Language">HTML</abbr>
@@ -60,17 +63,8 @@ export default function App() {
         </section>
         <section>
           <h2>웹 표준과 접근성을 준수해야 합니다.</h2>
-          {/* 클릭 이벤트 리스너 추가: JSX onClick={함수} */}
-          {/* ❌ BAD!! 키보드 접근이 불가능!! */}
-          {/* <div onClick={() => alert('접근성이 보장 안되는 나쁜 코드!!')}>모든 사용자 고려 ❌</div> */}
-          {/* ✅ GODD!! 키보드 접근이 가능!! */}
-          <button
-            type="button"
-            className={styles.button}
-            onClick={() => alert("모든 사용자가 행복해요!!! 🌈")}
-          >
-            모든 사용자 고려 ⭕️
-          </button>
+          <Button />{" "}
+          {/* 리액트 컴포넌트 (JSX 구문: React.createElement(Button)) */}
         </section>
       </main>
       <footer className={styles.footer}>
