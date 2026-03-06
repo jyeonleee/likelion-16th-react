@@ -6,7 +6,7 @@ import "./index.css";
 const rootElement = document.getElementById("root");
 
 // 방어적 프로그래밍
-// rootElement가 null일 가능성을 걷어내자!
+// rootElement가 null일 가능성을 걷어내자!!
 if (!rootElement) {
   throw new Error("문서에 #root인 요소가 없습니다. 확인해보세요.");
 }
