@@ -26,9 +26,9 @@
 
     & h2 {
       margin-top: 0;
-      color: #61dafb;
+      color: #0b7ea4;
       font-size: 1.25rem;
-      border-bottom: 2px solid #61dafb;
+      border-bottom: 2px solid currentColor;
       display: inline-block;
       padding-bottom: 0.25rem;
     }
