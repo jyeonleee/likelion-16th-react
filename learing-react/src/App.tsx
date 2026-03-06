@@ -1,4 +1,6 @@
-import "./App.css";
+import styles from "./App.module.css";
+
+console.log(styles); // CSS Modules 기술을 사용해 내보내진 JS 객체
 
 /**
  * JSX (JavaScript eXtension: 자바스크립트 확장 (비표준: 브라우저 해석 못함: SyntaxError))
@@ -18,7 +20,7 @@ export default function App() {
   // JSX는 문(statement)이다? ❌ 값(expression, value)이다? ⭕️
   return (
     <>
-      <header className="header">
+      <header className={styles.header}>
         <h1>
           <dfn>
             <abbr title="JavaScript eXtension">JSX</abbr>
@@ -26,7 +28,7 @@ export default function App() {
           기초 배우기
         </h1>
       </header>
-      <main className="main">
+      <main className={styles.main}>
         <section>
           <h2>모든 태그는 반드시 닫혀야 합니다.</h2>
           <p>
@@ -46,12 +48,12 @@ export default function App() {
           <h2>
             <abbr>HTML</abbr>이 아닙니다.
           </h2>
-          <div className="field">
+          <div className={styles.field}>
             <label htmlFor="username">이름</label>
             <input
               id="username"
               type="text"
-              className="input"
+              className={styles.input}
               placeholder="이름을 입력하세요."
             />
           </div>
@@ -64,13 +66,14 @@ export default function App() {
           {/* ✅ GODD!! 키보드 접근이 가능!! */}
           <button
             type="button"
+            className={styles.button}
             onClick={() => alert("모든 사용자가 행복해요!!! 🌈")}
           >
             모든 사용자 고려 ⭕️
           </button>
         </section>
       </main>
-      <footer className="footer">
+      <footer className={styles.footer}>
         <small>
           COPYRIGHT RESERVED. © <abbr title="이듬(EUID)">EUID</abbr>. "완벽보다
           완주를!"
