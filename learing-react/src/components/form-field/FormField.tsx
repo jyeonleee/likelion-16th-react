@@ -1,4 +1,4 @@
-import styles from "./FormField.module.css";
+import styles from './FormField.module.css'
 
 export default function FormField() {
   return (
@@ -11,5 +11,5 @@ export default function FormField() {
         placeholder="이름을 입력하세요."
       />
     </div>
-  );
+  )
 }

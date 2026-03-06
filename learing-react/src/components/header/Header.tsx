@@ -1,5 +1,5 @@
-import Button from "../button/Button";
-import styles from "./Header.module.css";
+import Button from '../button/Button'
+import styles from './Header.module.css'
 
 export default function Header() {
   return (
@@ -7,10 +7,10 @@ export default function Header() {
       <h1>
         <dfn>
           <abbr title="JavaScript eXtension">JSX</abbr>
-        </dfn>{" "}
+        </dfn>{' '}
         기초 배우기
         <Button />
       </h1>
     </header>
-  );
+  )
 }

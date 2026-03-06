@@ -1,7 +1,7 @@
-import styles from "./Image.module.css";
+import styles from './Image.module.css'
 
 export default function Image() {
-  const size = 120;
+  const size = 120
   return (
     <img
       className={styles.image}
@@ -10,5 +10,5 @@ export default function Image() {
       width={size}
       height={size}
     />
-  );
+  )
 }
