@@ -17,7 +17,7 @@ export default function App() {
   // JSX (JavaScript 확장 구문: 마크업 (구조 설계 in JavaScript 파일))
   // JSX는 문(statement)이다? ❌ 값(expression, value)이다? ⭕️
   return (
-    <div>
+    <>
       <header className="header">
         <h1>
           <dfn>
@@ -76,6 +76,6 @@ export default function App() {
           완주를!"
         </small>
       </footer>
-    </div>
+    </>
   );
 }
