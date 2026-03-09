@@ -1,5 +1,19 @@
+// import { createElement } from 'react'
+import Footer from '@/components/Footer'
 import S from './style.module.css'
 
 export default function App() {
-  return <div className={S.container}></div>
+  return (
+    <div className={S.container}>
+      <div data-placeholder />
+      <Footer slogan={2026 + ''} />
+
+      {/* {createElement(
+        // 컴포넌트 이름 (Component Name)
+        Footer,
+        // 컴포넌트 속성 (Component Props)
+        { slogan: '완주 이후엔 스스로 학습 가능!' },
+      )} */}
+    </div>
+  )
 }
