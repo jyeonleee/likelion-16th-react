@@ -1,9 +1,14 @@
+import EventHandler from './EventHandler'
 import S from './style.module.css'
 
 // 기본 내보내기 (default export)
 // - 하나만 모듈을 내보낼 때
 export default function EventHandling() {
-  return <Container className={S.container}></Container>
+  return (
+    <Container className={S.container}>
+      <EventHandler />
+    </Container>
+  )
 }
 
 // --------------------------------------------------------------------------

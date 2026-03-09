@@ -2,7 +2,7 @@ import S from './style.module.css'
 
 interface WrapperProps {
   width?: string | number // 선택?(optional)
-  children: React.ReactNode // 필수(required)
+  children?: React.ReactNode // 필수(required)
 }
 
 function Wrapper({ width, children }: WrapperProps) {
