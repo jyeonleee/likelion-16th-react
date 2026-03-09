@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
-import Wrapper from "../Wrapper";
-import S from "./style.module.css";
+import type { ReactNode } from 'react'
+import Wrapper from '../Wrapper'
+import S from './style.module.css'
 
 interface HeaderProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 function Header(props: HeaderProps) {
@@ -22,7 +22,7 @@ function Header(props: HeaderProps) {
     <header className={S.header}>
       <Wrapper>{props.children}</Wrapper>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
