@@ -1,7 +1,6 @@
-import { Footer, Header, Image, Wrapper } from "@/components";
-import { ConditionalRendering } from "@/learns";
-import S from "./style.module.css";
-
+import { Footer, Header, Image, Wrapper } from '@/components'
+import { ComponentState } from '@/learns'
+import S from './style.module.css'
 
 export default function App() {
   return (
@@ -13,13 +12,13 @@ export default function App() {
         </h2>
       </Header>
 
-      <Wrapper>
-        <ConditionalRendering />
-      </Wrapper>
+      <div data-placeholder>
+        <Wrapper>
+          <ComponentState />
+        </Wrapper>
+      </div>
 
-      {/* <div data-placeholder /> */}
-
-      <Footer slogan={"모든 이들에게 행복을!"} />
+      <Footer slogan={'모든 이들에게 행복을!'} />
     </div>
-  );
+  )
 }
