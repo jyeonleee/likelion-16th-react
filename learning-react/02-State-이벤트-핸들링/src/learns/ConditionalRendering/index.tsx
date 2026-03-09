@@ -1,3 +1,4 @@
+import ProfileCard from './ProfileCard';
 import S from './style.module.css'
 
 function ConditionalRendering() {
@@ -13,19 +14,19 @@ function ConditionalRendering() {
       <h2>팀원 소개</h2>
       <ul className={S.profileList}>
         <li>
-          <div data-placeholder />
+          <ProfileCard name="한수정" role="백엔드 개발자" isNew />
         </li>
 
         <li>
-          <div data-placeholder />
+          <ProfileCard name="이주연" role="프론트엔드 개발자" isNew isBest />
         </li>
 
         <li>
-          <div data-placeholder />
+          <ProfileCard name="박준현" role="프로젝트 매니저" isBest />
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
 export default ConditionalRendering
