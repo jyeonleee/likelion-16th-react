@@ -1,5 +1,5 @@
 import { Footer, Header, Image, Wrapper } from '@/components'
-import { UpdateState } from '@/learns'
+import { ControlledComponent } from '@/learns'
 import S from './style.module.css'
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
 
       <div className={S.main}>
         <Wrapper>
-          <UpdateState />
+          <ControlledComponent />
         </Wrapper>
       </div>
 

@@ -23,9 +23,9 @@ export default function BatchCounter() {
     // Batch '일괄적으로 한꺼번에' 업데이트
     // 조건: setCount 함수를 3번 사용
 
-    setCount((prevCount /* 0 */) => prevCount + 1 /* 0 + 1 = 1 */)
-    setCount((prevCount /* 1 */) => prevCount + 1 /* 1 + 1 = 2 */)
-    setCount((prevCount /* 2 */) => prevCount + 1 /* 2 + 1 = 3 */)
+    setCount((prevCount) => prevCount + 1) // 리액트! 설정한 다음 상태 값으로 화면 그려!
+    setCount((prevCount) => prevCount + 1) // 리액트! 설정한 다음 상태 값으로 화면 그려!
+    setCount((prevCount) => prevCount + 1) // 리액트! 설정한 다음 상태 값으로 화면 그려!
 
     // 현재 렌더링 시점
     // count = 0
