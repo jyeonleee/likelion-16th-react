@@ -1,4 +1,4 @@
-import { useState, type MouseEvent } from 'react'
+import { useState, type MouseEvent, type MouseEventHandler } from 'react'
 import S from './style.module.css'
 
 export default function EventHandler() {
@@ -12,20 +12,25 @@ export default function EventHandler() {
     setCount(nextCount)
   }
 
-  const handlePrintMessage = (message: string) => {
-    alert(message)
+  const handleIncreaseCount2: MouseEventHandler<HTMLButtonElement> = (e) => {
+    console.log(e.type + ' 이벤트 발동!')
+    const nextCount = count + 1
+    setCount(nextCount)
   }
+  
+  // 이벤트 핸들러에 매개변수를 설정할 경우
+  // handlePrintMessage
 
   return (
     <section className={S.container}>
-      <h2 className={S.title}>이벤트 핸들링 실습</h2>
+      <h2 className={S.title}>이벤트 핸들링</h2>
       <div role="group" className={S.buttonGroup}>
         <button
           type="button"
           className={S.button}
           // TODO 2: JSX에서 함수 몸체 내부에 변수에 함수 값 할당
           onClick={handleIncreaseCount}
-          onDoubleClick={() => handlePrintMessage('오늘 수업 끝!')}
+          // TODO 3: JSX에서 이벤트 핸들러에 메시지를 전달
         >
           클릭(Click) 이벤트 ({count})
         </button>
