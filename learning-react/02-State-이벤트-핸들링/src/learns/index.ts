@@ -18,3 +18,4 @@ export { default as UpdateState } from './UpdateState'
 export { default as ControlledComponent } from './ControlledComponent'
 
 // 6. 스냅샷의 이해 : learn/StateIsSnapshot
+export { default as StateIsSnapshot } from './StateIsSnapshot'
