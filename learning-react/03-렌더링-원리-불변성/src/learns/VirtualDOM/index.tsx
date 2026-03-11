@@ -24,22 +24,24 @@ import S from './style.module.css'
  * - 명령적 프로그래밍
  */
 
-
-export default function VirtualDOM() {
+export default function VirtualDOM /* React Element Tree (Memory) */() {
   const [count, setCount] = useState(0)
+
+  const [content, setContent] = useState('')
 
   // 바닐라 JS 방식
   // 리액트의 가상 DOM을 무시하고 실제 DOM을 직접 갈아끼움
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleVanillaUpdate = () => {
     const nextCount = count + 1
     setCount(nextCount) // 상태 업데이트. 하지만...
+
+    // ----------------------------------------------------------------
 
     // 직접 DOM 노드를 찾아가서 전체 HTML을 덮어버림 (강제 조작)
     const vanillaArea = document.getElementById('vanilla-area')
 
     if (vanillaArea) {
-      vanillaArea.innerHTML = `
+      vanillaArea.innerHTML = /* html */`
         <p class="${S.countDisplay}">
           직접 조작 카운트: <strong>${nextCount}</strong>
         </p>
@@ -75,21 +77,32 @@ export default function VirtualDOM() {
           <input
             type="text"
             className={S.inputField}
+            aria-label="리액트 방식"
             placeholder="내용을 작성하고 버튼을 누르세요."
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
           />
-          <button type="button" className={`${S.button} ${S.reactBtn}`}>
+          <button
+            type="button"
+            className={`${S.button} ${S.reactBtn}`}
+            onClick={() => setCount((c) => c + 1)}
+          >
             리액트 업데이트
           </button>
           <p className={S.desc}>
-            가상 DOM이 <strong>숫자만</strong> 바꿉니다. 
-            입력창은 그대로 유지됩니다.
+            가상 DOM이 <strong>숫자만</strong> 바꿉니다. 입력창은 그대로
+            유지됩니다.
           </p>
         </article>
 
         {/* 직접 조작 방식 (가상 DOM을 거치지 않음) */}
         <article className={S.box}>
           <h3>
-            직접 <dfn><abbr title="Document Object Model">DOM</abbr></dfn> 조작 방식
+            직접{' '}
+            <dfn>
+              <abbr title="Document Object Model">DOM</abbr>
+            </dfn>{' '}
+            조작 방식
           </h3>
           <div id="vanilla-area">
             <p className={S.countDisplay}>
@@ -101,7 +114,11 @@ export default function VirtualDOM() {
               placeholder="내용을 작성하고 버튼을 누르세요."
             />
           </div>
-          <button type="button" className={`${S.button} ${S.vanillaBtn}`}>
+          <button
+            type="button"
+            className={`${S.button} ${S.vanillaBtn}`}
+            onClick={handleVanillaUpdate}
+          >
             직접 <abbr>DOM</abbr> 업데이트
           </button>
           <p data-vanilla-desc className={S.desc}>
