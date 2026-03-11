@@ -41,7 +41,7 @@ export default function VirtualDOM /* React Element Tree (Memory) */() {
     const vanillaArea = document.getElementById('vanilla-area')
 
     if (vanillaArea) {
-      vanillaArea.innerHTML = /* html */`
+      vanillaArea.innerHTML = /* html */ `
         <p class="${S.countDisplay}">
           직접 조작 카운트: <strong>${nextCount}</strong>
         </p>
@@ -55,7 +55,7 @@ export default function VirtualDOM /* React Element Tree (Memory) */() {
 
     const vanillaDesc = document.querySelector('[data-vanilla-desc]')
     if (vanillaDesc) {
-      vanillaDesc.innerHTML = `
+      vanillaDesc.innerHTML = /* html */ `
       <p data-vanilla-desc class="${S.desc}">
         ⚠️ <strong>전체 HTML이 교체</strong>되어 입력값이 사라졌습니다!
       </p>
@@ -65,7 +65,13 @@ export default function VirtualDOM /* React Element Tree (Memory) */() {
 
   return (
     <section className={S.container}>
-      <h2 className={S.heading}>가상 DOM의 존재 이유</h2>
+      <h2 className={S.heading}>
+        가상{' '}
+        <dfn>
+          <abbr title="Document Object Model">DOM</abbr>
+        </dfn>
+        의 존재 이유
+      </h2>
 
       <div className={S.comparisonGrid}>
         {/* 리액트 방식 (가상 DOM으로 관리) */}
@@ -100,7 +106,7 @@ export default function VirtualDOM /* React Element Tree (Memory) */() {
           <h3>
             직접{' '}
             <dfn>
-              <abbr title="Document Object Model">DOM</abbr>
+              <abbr>DOM</abbr>
             </dfn>{' '}
             조작 방식
           </h3>
