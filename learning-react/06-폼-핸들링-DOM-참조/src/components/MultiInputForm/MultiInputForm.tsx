@@ -1,9 +1,9 @@
-import { useId } from 'react'
-import NicknameField from './parts/NicknameField'
-import EmailField from './parts/EmailField'
-import PasswordField from './parts/PasswordField'
-import PasswordConfirmField from './parts/PasswordConfirmField'
-import S from './MultiInputForm.module.css'
+import { useId } from "react";
+import NicknameField from "./parts/NicknameField";
+import EmailField from "./parts/EmailField";
+import PasswordField from "./parts/PasswordField";
+import PasswordConfirmField from "./parts/PasswordConfirmField";
+import S from "./MultiInputForm.module.css";
 
 // -------------------------------------------------------------------
 // 실습 가이드
@@ -14,13 +14,28 @@ import S from './MultiInputForm.module.css'
 // 4. 폼 초기화(reset) 이벤트 핸들러를 작성하세요.
 // -------------------------------------------------------------------
 
-export default function MultiInputForm() {
-  const sectionId = useId()
+interface FormState {
+  nickname: string;
+  email: string;
+  password: string;
+  passwordConfirm: string;
+}
 
-  const nickname = ''
-  const email = ''
-  const password = ''
-  const passwordConfirm = ''
+const INITIAL_FORM_STATE: FormState = {
+  nickname: "",
+  email: "",
+  password: "",
+  passwordConfirm: "",
+};
+
+export default function MultiInputForm() {
+  const sectionId = useId();
+  const [formState] = useState(INITIAL_FORM_STATE);
+  
+  const nickname = "";
+  const email = "";
+  const password = "";
+  const passwordConfirm = "";
 
   return (
     <article className={S.card} aria-labelledby={sectionId}>
@@ -34,18 +49,9 @@ export default function MultiInputForm() {
       </header>
 
       <form className={S.form}>
-        <NicknameField
-          value={nickname}
-          onChange={() => {}}
-        />
-        <EmailField
-          value={email}
-          onChange={() => {}}
-        />
-        <PasswordField
-          value={password}
-          onChange={() => {}}
-        />
+        <NicknameField value={nickname} onChange={() => {}} />
+        <EmailField value={email} onChange={() => {}} />
+        <PasswordField value={password} onChange={() => {}} />
         <PasswordConfirmField
           value={passwordConfirm}
           basePassword={password}
@@ -61,5 +67,5 @@ export default function MultiInputForm() {
         </div>
       </form>
     </article>
-  )
+  );
 }
