@@ -4,6 +4,9 @@ import SaveButton from './parts/SaveButton'
 import FileUploadResult from './parts/FileUploadResult'
 import S from './FileUpload.module.css'
 
+const { VITE_IMGBB_URL: apiUrl, VITE_IMGBB_API_KEY: apiKey } = import.meta.env;
+const API_ENDPOINT = `${apiUrl}?key=${apiKey}`;
+console.log(API_ENDPOINT);
 // --------------------------------------------------------------------------------------
 // 실습 가이드
 // --------------------------------------------------------------------------------------
@@ -40,11 +43,13 @@ import S from './FileUpload.module.css'
 // --------------------------------------------------------------------------------------
 
 export default function FileUpload() {
-
+  const handleUpload = (e: React.SubmitEvent<HTMLFormElement>) => { 
+    const formElemnt = e.currentTarget
+  }
   return (
     <section className={S.card}>
       <h2 className={S.title}>프로필 설정</h2>
-      <form className={S.form}>
+      <form onSubmit={ handleUpload } className={S.form}>
         <NickNameField />
         <FileUploadField />
         <SaveButton />
