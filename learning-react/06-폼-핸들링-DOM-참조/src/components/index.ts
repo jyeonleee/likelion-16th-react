@@ -13,5 +13,8 @@ export { default as FormSubmission } from './FormSubmission/FormSubmission'
 // - DOM 직접 제어
 export { default as RefStudy } from './RefStudy/RefStudy'
 
-// 비제어 컴포넌트 & 파일 (참고: https://api.imgbb.com)
+// 제어 컴포넌트 vs 비제어 컴포넌트 & 파일 업로드 기능 (참고: https://api.imgbb.com)
 export { default as FileUpload } from './FileUpload/FileUpload'
+
+// 멀티 파일 업로드 (참고)
+export { default as MultiFilesUpload } from './MultiFilesUpload/MultiFilesUpload'
