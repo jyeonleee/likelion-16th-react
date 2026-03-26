@@ -1,4 +1,4 @@
-import { MovieSearch } from '@/practices'
+import MovieSearch from '@/practices/MovieSearch'
 import S from './style.module.css'
 
 export default function App() {
