@@ -1,41 +1,40 @@
-import { createContext, useState } from 'react'
+import { useModal, useTheme } from '@/contexts'
 import GrandFather from './parts/GrandFather'
 import S from './style.module.css'
-
-type SetAction<T> = React.Dispatch<React.SetStateAction<T>>
-
-interface FamilyContextValue {
-  name: string
-  setName: SetAction<string>
-  email: string
-  setEmail: SetAction<string>
-  checked: boolean
-  setChecked: SetAction<boolean>
-}
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const FamilyContext = createContext<null|FamilyContextValue>(null)
+import { ConfirmDelete } from '@/components/ConfirmDelete'
+import { wait } from '@/utils'
 
 export default function ContextAdvanced() {
-  const [name, setName] = useState('박하루')
-  const [email, setEmail] = useState('haru@child.family')
-  const [checked, setChecked] = useState(false)
+  const { toggle } = useTheme()
 
-  const familyContextValue: FamilyContextValue = {
-    name,
-    setName,
-    email,
-    setEmail,
-    checked,
-    setChecked,
-  }
+  const { open } = useModal()
 
   return (
     <section className={`${S.box} ${S.container}`}>
       <h1 className={S.title}>깊숙히 컴포넌트 Props 전달</h1>
-      <FamilyContext.Provider value={familyContextValue}>
-        <GrandFather />
-      </FamilyContext.Provider>
+      <button type="button" onClick={toggle}>
+        테마 스위치
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          open(
+            '모달은 전역 상태로 관리해요!',
+            <ConfirmDelete
+              onConfirm={async () => {
+                await wait(600)
+                alert('승인')
+              }}
+              onCancel={() => {
+                alert('거절!')
+              }}
+            />,
+          )
+        }}
+      >
+        모달 열기
+      </button>
+      <GrandFather />
     </section>
   )
 }
